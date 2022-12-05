@@ -13,7 +13,6 @@
     {
       "description": "Trigger major release from breaking prod dependency updates",
       "groupName": "major user-relevant dependencies",
-      "groupSlug": "major-user-relevant",
       "matchPaths": ["k8s-*/**"],
       "matchUpdateTypes": ["major"],
       "semanticCommitType": "feat",
@@ -22,7 +21,6 @@
     {
       "description": "Trigger patch release from non-major prod dependency updates",
       "groupName": "non-major user-relevant dependencies",
-      "groupSlug": "non-major-user-relevant",
       "matchPaths": ["k8s-*/**"],
       "matchUpdateTypes": ["minor", "patch"],
       "semanticCommitType": "fix",
