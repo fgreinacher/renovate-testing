@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "kubernetes": {
+    "fileMatch": ["^k8s-(?:[^/]+)/(?:[^/]+/)*.+\\.ya?ml$"]
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": [ "*" ],
+      "matchUpdateTypes": [ "minor", "patch", "digest", "lockFileMaintenance" ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-non-major"
+    },
+    {
+      "description": "Trigger major release from breaking prod dependency updates",
+      "groupName": "major user-relevant dependencies",
+      "matchPaths": ["/k8s-*/**"],
+      "matchUpdateTypes": ["major"],
+      "semanticCommitType": "feat",
+      "commitBody": "BREAKING CHANGE: Major dependency update",
+    },
+    {
+      "description": "Trigger patch release from non-major prod dependency updates",
+      "groupName": "non-major user-relevant dependencies",
+      "matchPaths": ["/k8s-*/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "semanticCommitType": "fix",
+    },
+  ]
+}

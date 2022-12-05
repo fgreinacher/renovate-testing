@@ -1,0 +1,9 @@
+namespace: elastic-system
+
+helmCharts:
+  - name: eck-operator
+    namespace: elastic-system
+    includeCRDs: true
+    releaseName: elastic-operator
+    version: 2.4.0
+    repo: https://helm.elastic.co
