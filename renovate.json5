@@ -4,12 +4,12 @@
     "fileMatch": ["^k8s-(?:[^/]+)/(?:[^/]+/)*.+\\.ya?ml$"]
   },
   "packageRules": [
-    {
-      "matchPackagePatterns": [ "*" ],
-      "matchUpdateTypes": [ "minor", "patch", "digest", "lockFileMaintenance" ],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-non-major"
-    },
+    //{
+    //  "matchPackagePatterns": [ "*" ],
+    //  "matchUpdateTypes": [ "minor", "patch", "digest", "lockFileMaintenance" ],
+    //  "groupName": "all non-major dependencies",
+    //  "groupSlug": "all-non-major"
+    //},
     {
       "description": "Trigger major release from breaking prod dependency updates",
       "groupName": "major user-relevant dependencies",
